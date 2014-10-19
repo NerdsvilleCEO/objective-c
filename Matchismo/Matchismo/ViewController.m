@@ -27,16 +27,16 @@
     self.flipLabel.text = [NSString stringWithFormat:@"Flips: %d",flipCount];
 }
 - (IBAction)onCardTouchUp:(UIButton *)sender {
-    Card *card = [self.playingCardDeck drawRandomCard];
     if([sender.currentTitle length]){
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
     }
     else{
-        [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+        Card *card = [self.playingCardDeck drawRandomCard];
         [sender setTitle:card.contents forState:UIControlStateNormal];
+        [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+         self.flipCount++;
     }
-    self.flipCount++;
 }
 
 - (void)viewDidLoad {
