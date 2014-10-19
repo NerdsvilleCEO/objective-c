@@ -13,7 +13,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipLabel;
-@property (nonatomic) int flipCount;
+@property (nonatomic) NSInteger flipCount;
 @property (strong, nonatomic) Deck *playingCardDeck;
 @end
 
